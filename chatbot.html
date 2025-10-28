@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/images/logo.png" alt="Logo" id="headerImage">
+            <h1>Chat avec l'API Hugging Face</h1>
+        </div>
+        <form id="chatForm">
+            <input type="text" id="userMessage" placeholder="Entrez votre message" required>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <h2>Réponse :</h2>
+        <div id="chatResponse">Aucune réponse pour le moment.</div>
+	<br>
+	<button onclick="window.location.href='http://localhost:3000/'">Retour</button>
+    </div>
+
+    <script>
+        document.getElementById("chatForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const userMessage = document.getElementById("userMessage").value;
+            document.getElementById("chatResponse").innerText = "Chargement...";
+
+            try {
+                const response = await fetch("http://localhost/:3000/chatbot.html", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ userMessage })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Erreur lors de la requête au serveur");
+                }
+
+                const data = await response.json();
+                document.getElementById("chatResponse").innerText = data.response;
+            } catch (error) {
+                console.error("Erreur de requête côté client :", error);
+                document.getElementById("chatResponse").innerText = "Erreur de requête au serveur.";
+            }
+        });
+    </script>
+</body>
+
+</html>
