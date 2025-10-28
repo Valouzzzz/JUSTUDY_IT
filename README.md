@@ -41,3 +41,5 @@ Le site et le code sont en **français**, mais une **version anglaise** est en c
    ```
 5. aller sur le site :
 http://localhost:3000
+
+<img width="947" height="473" alt="image" src="https://github.com/user-attachments/assets/243de8a0-f4ca-4a45-8407-9607a1d44d22" />
