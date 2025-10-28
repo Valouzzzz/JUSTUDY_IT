@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUSTUDY IT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Bandeau de navigation centré -->
+        <nav class="navbar">
+            <a href="#taskSection">Tâche</a>
+            <a href="#weatherSection">Météo</a>
+            <a href="#agendaSection">Agenda</a>
+            <a href="#noteSection">Note</a>
+            <a href="#linkSection">Lien</a>
+        </nav>
+        <br id="taskSection">
+        <br>
+        <div class="header">
+            <img src="/images/logo.png" alt="Logo" id="headerImage">
+       	    <h1>Gestionnaire de Tâches</h1>
+        </div>
+        <form id="taskForm">
+            <input type="text" id="taskTitle" placeholder="Titre de la tâche" required>
+            <input type="text" id="taskDesc" placeholder="Description de la tâche" required>
+            <input type="date" id="taskDeadline" required>
+            <button type="submit">Ajouter Tâche</button>
+        </form>
+
+        <ul id="taskList"></ul>
+
+        <br>
+        <br>
+        
+        <div id="questionnaire-status">
+                <p id="doneToday">Chargement...</p>
+                <p id="progress"></p>
+        </div>
+
+        <br>
+        <br>
+        <br id="weatherSection">
+        <br>
+
+        <!-- Nouvelle section pour la météo -->
+        <h2>Prévisions Météo</h2>
+        <p id="weather-info">Chargement des prévisions météo...</p>
+        <a href="https://www.lachainemeteo.com/meteo-france/ville-33/previsions-meteo-paris-aujourdhui">+</a>
+        <button id="refreshWeather">Rafraîchir les prévisions météo</button>
+        <br>
+        <br id="agendaSection">
+        <br>
+        <h2>Agenda de la Semaine</h2>
+        <div id="weekAgenda">
+            <table id="agendaTable">
+                <thead>
+                    <tr>
+                        <th>Horaires</th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                        <th>Jeudi</th>
+                        <th>Vendredi</th>
+                        <th>Samedi</th>
+                        <th>Dimanche</th>
+                    </tr>
+                </thead>
+                <tbody id="agendaBody">
+                    <!-- Les créneaux horaires seront générés dynamiquement par JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <button id="downloadSchedule">Télécharger l'emploi du temps</button>
+
+        <!-- Formulaire pour ajouter des événements -->
+        <div id="eventFormContainer">
+            <h3>Ajouter un événement</h3>
+            <form id="eventForm">
+                <input type="text" id="eventTitle" placeholder="Nom de l'événement" required>
+                <select id="eventDay">
+                    <option value="0">Lundi</option>
+                    <option value="1">Mardi</option>
+                    <option value="2">Mercredi</option>
+                    <option value="3">Jeudi</option>
+                    <option value="4">Vendredi</option>
+                    <option value="5">Samedi</option>
+                    <option value="6">Dimanche</option>
+                </select>
+                <textarea id="eventDescription" placeholder="Description de l'événement"></textarea>
+                <input type="time" id="eventTime" required>
+                <input type="number" id="eventDuration" placeholder="Durée (heures)" min="1" max="10" required>
+                <input type="color" id="eventColor" value="#ff0000"> <!-- Ajout du sélecteur de couleur -->
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+        <p> Temp avant partiel :</p>
+        <p id="countdown">Chargement...</p>
+        <style>
+            #weekAgenda {
+                margin: 20px 0;
+                overflow-x: auto;
+            }
+
+            #agendaTable {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            #agendaTable th,
+            #agendaTable td {
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+
+            #agendaTable th {
+                background-color: #f4f4f4;
+            }
+
+            #eventFormContainer {
+                margin-top: 20px;
+            }
+
+            #eventForm input,
+            #eventForm select,
+            #eventForm button {
+                margin: 5px 0;
+                padding: 8px;
+                width: 100%;
+            }
+        </style>
+        <br>
+        <br>
+        <br id="noteSection">
+        <br>
+
+        <!-- Section des notes -->
+        <h2>Gestion des Notes</h2>
+        <form id="noteForm">
+            <label for="noteSubject">Matière :</label>
+            <br>
+            <select id="noteSubject" required>
+                <option value="anglais">Anglais</option>
+                <option value="maths">Maths</option>
+                <option value="histoire">Economie</option>
+            </select>
+            <br>
+            <label for="noteValue">Note :</label>
+            <input type="number" id="noteValue" placeholder="Note" required min="0" max="20" step="0.01">
+            <br>
+            <label for="noteCoef">Coefficient :</label>
+            <input type="number" id="noteCoef" placeholder="Coefficient" required min="1" step="0.01">
+            <br>
+            <label for="noteDate">Date :</label>
+            <input type="date" id="noteDate" required>
+
+            <button type="submit">Ajouter Note</button>
+        </form>
+
+        <ul id="noteList"></ul>
+
+
+        <button id="resetGraph">Réinitialiser le Graphique</button>
+        <div id="chartContainer">
+            <canvas id="notesChart"></canvas>
+        </div>
+        <!-- Conteneur pour le graphique -->
+        <canvas id="notesChart"></canvas>
+        <br>
+
+        <h2>Moyenne des Notes</h2>
+        <p id="average-grade">Moyenne : --</p>
+
+        <br>
+        <div id="chat-flash">
+            <button onclick="window.location.href='http://localhost:3000/flashcarde.html'">flashcard</button>
+            <button onclick="window.location.href='http://localhost:3000/chatbot.html'">🤖 Chat bot 🤖</button>
+        </div>
+
+        <!-- Boutons de redirection -->
+        <h2 id="linkSection"> </h2>
+        <div class="link-buttons">
+            <button onclick="window.location.href='https://github.com/Valouzzzz'">Accéder à Mon Github</button>
+        </div>
+
+	<br>
+	<div id="chapter-today">Chargement...</div>
+
+        <br>
+        <input type="file" id="scheduleInput" accept="image/*">
+        <div id="scheduleDisplay">
+            <img id="scheduleImage" style="display:none; max-width: 100%;" />
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>
