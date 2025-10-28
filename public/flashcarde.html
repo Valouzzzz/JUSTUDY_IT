@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mes Flashcards</h1>
+
+        <!-- Formulaire pour ajouter une flashcard -->
+        <form id="flashcardForm">
+            <input type="text" id="question" placeholder="Question" required>
+            <input type="text" id="answer" placeholder="Réponse" required>
+
+            <!-- Sélection ou ajout d'une catégorie -->
+            <label for="category">Catégorie :</label>
+            <select id="category" required>
+                <option value="">Sélectionner une catégorie</option>
+                <!-- Les options de catégories seront ajoutées ici dynamiquement -->
+            </select>
+            <input type="text" id="newCategory" placeholder="Nouvelle catégorie">
+            <button type="button" id="addCategoryButton">Ajouter Catégorie</button>
+
+            <button type="submit">Ajouter Flashcard</button>
+        </form>
+
+        <!-- Liste de flashcards -->
+        <ul id="flashcardList"></ul>
+
+        <!-- Filtre par catégorie -->
+        <label for="filterCategory">Filtrer par catégorie :</label>
+        <select id="filterCategory">
+            <option value="">Toutes les catégories</option>
+            <!-- Les options de catégories seront ajoutées ici dynamiquement -->
+        </select>
+
+        <button onclick="window.location.href='http://localhost:3000/'">Retour</button>
+	<button onclick="window.location.href='http://localhost:3000/questionnaire.html'">questionnaire</button>
+        <script src="flashcarde.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le bandeau de navigation centré et fixé */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    /* Centre les liens */
+    padding: 5px 10px;
+    margin: 10px auto;
+    max-width: 80%;
+    /* Largeur limitée et centré dans le conteneur */
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Ajustement du conteneur pour ne pas masquer le bandeau */
+.container {
+    padding-top: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.link-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-buttons button {
+    background-color: #007bff;
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.link-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.header {
+    display: flex;
+    /* Utilise flexbox pour aligner l'image et le texte */
+    align-items: center;
+    /* Centre verticalement les éléments */
+}
+
+#headerImage {
+    max-width: 110px;
+    /* Ajustez la largeur de l'image comme souhaité */
+    margin-right: 10px;
+    /* Espace entre l'image et le titre */
+}
+
+p {
+    text-align: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+    font-size: 2em;
+}
+
+.timeSlot {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timeSlot:hover {
+    background-color: #f0f0f0;
+}
+
+.eventAdded {
+    background-color: #ffefc6;
+    font-weight: bold;
+    color: #333;
+}
+
+.deleteButton {
+    margin-left: 8px;
+    padding: 2px 4px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}
+/* style liste de la journée */
+#questionnaire-status {
+    text-align: start;
+}
+
+/* Style pour la section Agenda */
+#agendaSection {
+    margin-top: 20px;
+}
+
+#agenda {
+    border: 1px solid #ddd;
+    /* Ajoutez une bordure pour l'agenda */
+    padding: 10px;
+    height: 300px;
+    /* Ajustez la hauteur selon vos besoins */
+    overflow-y: auto;
+    /* Permet de faire défiler le contenu si nécessaire */
+}
+
+#agendaContainer {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#chat-flash {
+    text-align: center;
+}
+
+#flashcardList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashcard {
+    width: 300px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.flashcard:hover {
+    transform: scale(1.05);
+}
+
+.question {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.answer {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.delete-button {
+    margin-top: 15px;
+    padding: 8px;
+    font-size: 0.9em;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
