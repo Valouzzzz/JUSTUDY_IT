@@ -1,4 +1,4 @@
-#JUSTUDY IT 
+## JUSTUDY IT 
 
 Ce projet est un **site web en Node.js** qui permet de mieux s’organiser pendant les études.  
 Le site et le code sont en **français**, mais une **version anglaise** est en cours de développement.
@@ -36,7 +36,7 @@ Le site et le code sont en **français**, mais une **version anglaise** est en c
   ```
 4. Lancer le server :
    ```bash
-  node server.js
-  ```
+   node server.js
+   ```
 5. aller sur le site :
 http://localhost:3000
