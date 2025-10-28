@@ -1,0 +1,9 @@
+pip install requests beautifulsoup4
+pip install requests-html
+pip install Flask
+
+npm init -y
+npm install express
+
+node server.js
+http://localhost:3000
