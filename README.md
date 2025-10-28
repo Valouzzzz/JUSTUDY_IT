@@ -30,10 +30,11 @@ Le site et le code sont en **français**, mais une **version anglaise** est en c
    pip install requests-html Flask
    ```
 3. Node :
-  ```bash
-  npm init -y
-  npm install express
-  ```
+   ```bash
+   npm init -y
+   npm install express
+   ```
+   
 4. Lancer le server :
    ```bash
    node server.js
