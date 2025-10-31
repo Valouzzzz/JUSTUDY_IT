@@ -14,6 +14,7 @@ Le site et le code sont en **français**, mais une **version anglaise** est en c
 - 📊 **Gestionnaire de notes** avec affichage graphique
 - 🧩 **Page de flashcards**
 - 🤖 **ChatBot** connectable avec un **token Hugging Face**
+- 📄 **éditeur Markdown**
 - 🔗 **Liens utiles** (par défaut : mon GitHub)
 - 📨 **Notif discord** (envoie les taches de la journée sur discord)
 - 📟 **google sheet** (affiche s'il y a une matière à réviser avec un registre en CSV téléchargé automatiquement)
