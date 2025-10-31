@@ -150,3 +150,13 @@ function deleteFlashcard(listItem, flashcard) {
     })
     .catch(error => console.error("Erreur:", error));
 }
+
+document.getElementById("downloadJson").addEventListener("click", () => {
+    // Crée un lien pour télécharger le vrai fichier JSON à la racine
+    const link = document.createElement("a");
+    link.href = "/flashcarde.json"; // le fichier est à la racine du serveur
+    link.download = "flashcarde.json"; // nom du fichier à enregistrer
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
